@@ -1,41 +1,53 @@
 export function router(routes) {
-  // Fonction pour naviguer vers une nouvelle page
+
+  // Détection automatique de la racine
+  const BASE_URL = new URL(".", document.baseURI).pathname;
+
+  // Construire une URL publique
+  function getUrl(path) {
+    return BASE_URL + path.replace(/^\/+/, "");
+  }
+
+  // Normaliser une URL en route interne
+  function normalizeUrl(url) {
+    const pathname = new URL(url, window.location.href).pathname;
+
+    const path = pathname.startsWith(BASE_URL)
+      ? pathname.slice(BASE_URL.length)
+      : pathname;
+
+    return "/" + path.replace(/^\/+/, "");
+  }
+
+  // Afficher une page
+  function renderPage(route) {
+    const view = routes[route] || "<h1>404</h1><p>Page non trouvée</p>";
+    document.getElementById("app").innerHTML = view;
+  }
+
+  // Naviguer
   function navigateTo(url) {
-    // Change l'URL et ajoute une nouvelle entrée dans l'historique
-    window.history.pushState({ page: url }, "", url);
-    renderPage(url);
+    const route = normalizeUrl(url);
+
+    window.history.pushState({ page: route }, "", getUrl(route));
+    renderPage(route);
   }
 
-  // Fonction pour afficher la page en fonction de l'URL
-  function renderPage(url) {
-    const view = routes[url] || `<h1>404</h1><p>Page non trouvée</p>`;
-
-    // Vider le contenu existant
-    const app = document.getElementById("app");
-    // app.innerHTML = ""; // Vider le contenu de l'élément parent pour éviter la réutilisation des anciens enfants
-
-    // Créer un nouvel élément avec le contenu de la route
-    // const div = document.createElement("div");
-    // div.innerHTML = view;
-
-    // Ajouter le nouvel élément au DOM
-    // app.appendChild(div);
-    app.innerHTML = view;
-  }
-
-  // Gestion de l'événement popstate
-  window.addEventListener("popstate", (event) => {
-    const state = event.state;
-    renderPage(state ? state.page : "/");
+  // Gérer précédent / suivant
+  window.addEventListener("popstate", () => {
+    renderPage(normalizeUrl(window.location.href));
   });
 
-  // Exemple d'utilisation
+  // Intercepter les liens du menu
   document.querySelector("nav").addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      e.preventDefault();
-      navigateTo(e.target.getAttribute("href"));
-    }
+    const link = e.target.closest("a");
+
+    if (!link) return;
+
+    e.preventDefault();
+    navigateTo(link.href);
   });
 
-  navigateTo("/");
+  // Afficher la page correspondant à l'URL actuelle
+  renderPage(normalizeUrl(window.location.href));
 }
