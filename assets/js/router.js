@@ -21,8 +21,17 @@ export function router(routes) {
 
   // Afficher une page
   function renderPage(route) {
-    const view = routes[route] || "<h1>404</h1><p>Page non trouvée</p>";
-    document.getElementById("app").innerHTML = view;
+    const page = routes[route];
+
+    const html = typeof page === "string"
+      ? page
+      : page?.html ?? "<h1>404</h1><p>Page non trouvée</p>";
+
+    document.getElementById("app").innerHTML = html;
+
+    if (typeof page === "object") {
+      page.init?.();
+    }
   }
 
   // Naviguer
