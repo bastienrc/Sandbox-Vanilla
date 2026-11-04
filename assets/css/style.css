@@ -19,13 +19,13 @@ h1 {
   margin: 1rem 0;
 }
 
-nav {
+nav.navbar {
   display: flex;
   width: 100%;
   background-color: #666;
 }
 
-nav a {
+nav.navbar a {
   background-color: #666;
   color: #ffffff;
   display: block;
@@ -33,12 +33,12 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
+nav.navbar a:hover {
   background-color: #ddd;
   color: #000000;
 }
 
-nav a.active {
+nav.navbar a.active {
   background-color: #00b300;
   color: white;
 }
@@ -46,8 +46,6 @@ nav a.active {
 #app {
   width: 80%;
   margin: 3em auto 0;
-  border: 3px solid grey;
-  height: 80vh;
 }
 
 #app p {
