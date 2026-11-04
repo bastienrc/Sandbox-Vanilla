@@ -39,6 +39,7 @@ a:hover {
 
 nav.navbar {
   display: flex;
+  align-items: center;
   width: 100%;
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-primary);
@@ -46,19 +47,21 @@ nav.navbar {
 
 nav.navbar a {
   background: transparent;
-  color: var(--color-text);
+  color: var(--color-text, #fff);
   display: block;
   padding: 1em;
   text-decoration: none;
 }
 
 nav.navbar a:hover {
-  color: var(--color-link-hover);
+  color: var(--color-text, #fff);
+  background-color: var(--color-primary);
   text-decoration: underline;
 }
 
 nav.navbar a.active {
-  color: var(--color-text);
+  color: var(--color-text, #fff);
+  background-color: var(--color-secondary);
   border-bottom: 3px solid var(--color-text);
 }
 
@@ -69,4 +72,100 @@ nav.navbar a.active {
 
 #app p {
   padding: 1em;
+}
+
+
+/* Theme switcher */
+.theme-switcher {
+  position: relative;
+  margin-left: auto;
+  padding: 0.5rem;
+}
+
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+
+  background: var(--color-secondary);
+  color: var(--color-text, #fff);
+
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+
+  cursor: pointer;
+  font: inherit;
+}
+
+#theme-toggle:hover {
+  background: var(--color-accent);
+}
+
+.theme-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+
+  width: 240px;
+  padding: 0.5rem;
+
+  background: var(--color-bg);
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+
+  box-shadow: 0 8px 24px #0006;
+
+  display: grid;
+  gap: 0.25rem;
+
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.theme-menu[hidden] {
+  display: none;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  width: 100%;
+  padding: 0.65rem;
+
+  background: transparent;
+  color: var(--color-text, #fff);
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.theme-option:hover,
+.theme-option[aria-pressed="true"] {
+  background: var(--color-primary);
+}
+
+.theme-option[aria-pressed="true"] {
+  outline: 1px solid var(--color-accent);
+}
+
+.theme-colors {
+  display: flex;
+  gap: 3px;
+}
+
+.theme-colors span {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid #ffffff40;
+  flex-shrink: 0;
 }

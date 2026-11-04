@@ -15,10 +15,21 @@
 
 <body>
   <nav class="navbar">
+
     <a href="./" class="active">Accueil</a>
     <a href="./statistique">Statistique</a>
     <a href="./about">À propos</a>
     <a href="./contact">Contact</a>
+
+    <div class="theme-switcher">
+      <button id="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-menu">
+        🎨 <span id="theme-label">Dark</span>
+        <span aria-hidden="true">▾</span>
+      </button>
+
+      <div id="theme-menu" class="theme-menu" hidden></div>
+    </div>
+
   </nav>
 
   <main id="app"></main>
