@@ -2,6 +2,10 @@
 
 Retour au source avec HTML, CSS et JavaScript.
 
+- Page Home: Ajout d'une galerie infinie de projets
+- Page Statistique:
+  - 3 pie-charts
+  - 1 github-contribution-graph
 
 ## Architecture : pages modulaires et initialisation
 
