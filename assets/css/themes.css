@@ -1,0 +1,111 @@
+:root {
+  /* Dark */
+  --color-bg: #111;
+  --color-primary: #222;
+  --color-secondary: #333;
+  --color-accent: #2e2e2e;
+}
+
+/* 🌊 Océan profond */
+[data-theme="deep-ocean"] {
+  --color-bg: #071E26;
+  --color-primary: #124559;
+  --color-secondary: #598392;
+  --color-accent: #AEC3B0;
+}
+
+/* 🌲 Forêt enchantée */
+[data-theme="forest"] {
+  --color-bg: #14251B;
+  --color-primary: #294936;
+  --color-secondary: #52734D;
+  --color-accent: #A3B18A;
+}
+
+/* 🍂 Automne */
+[data-theme="autumn"] {
+  --color-bg: #382018;
+  --color-primary: #743D2B;
+  --color-secondary: #B66A3C;
+  --color-accent: #E2B56F;
+}
+
+/* 🌸 Sakura */
+[data-theme="sakura"] {
+  --color-bg: #352B38;
+  --color-primary: #A26778;
+  --color-secondary: #D9A5B3;
+  --color-accent: #F3DDE3;
+}
+
+/* 🔮 Mystique */
+[data-theme="mystique"] {
+  --color-bg: #171329;
+  --color-primary: #392A65;
+  --color-secondary: #7856A8;
+  --color-accent: #C5A5D8;
+}
+
+/* 🌌 Cosmos */
+[data-theme="cosmos"] {
+  --color-bg: #090D24;
+  --color-primary: #202C59;
+  --color-secondary: #536DA6;
+  --color-accent: #A9C6E8;
+}
+
+/* ☀️ Désert */
+[data-theme="desert"] {
+  --color-bg: #392719;
+  --color-primary: #80552D;
+  --color-secondary: #C18B4D;
+  --color-accent: #E9C990;
+}
+
+/* 🧊 Arctique */
+[data-theme="arctic"] {
+  --color-bg: #15252C;
+  --color-primary: #355C69;
+  --color-secondary: #83B6C1;
+  --color-accent: #D7EBEA;
+}
+
+/* 📜 Bibliothèque ancienne */
+[data-theme="dark-academia"] {
+  --color-bg: #29251D;
+  --color-primary: #554936;
+  --color-secondary: #9B8055;
+  --color-accent: #D6C49A;
+}
+
+/* Enchanted, Bibliothèque magique */
+[data-theme="enchanted"] {
+  --color-bg: #15251C;
+  --color-primary: #315B3C;
+  --color-secondary: #83A66B;
+  --color-accent: #D4E6A5;
+}
+
+/* Synthwave, Rétro futuriste */
+[data-theme="synthwave"] {
+  --color-bg: #190F2E;
+  --color-primary: #542B75;
+  --color-secondary: #D33D91;
+  --color-accent: #35D6C5;
+}
+
+/* Aquarium, Sous-marin */
+[data-theme="aquarium"] {
+  --color-bg: #071B33;
+  --color-primary: #124B68;
+  --color-secondary: #159A9C;
+  --color-accent: #8CE0D0;
+}
+
+/* Steampunk, Cuivre et laiton */
+[data-theme="steampunk"] {
+  --color-bg: #211B18;
+  --color-primary: #65412D;
+  --color-secondary: #A66B3F;
+  --color-accent: #D8B477;
+}
