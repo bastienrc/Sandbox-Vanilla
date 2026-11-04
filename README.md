@@ -1,11 +1,3 @@
-# IsekaiJS
+# Sandbox Vanilla
 
-Avec ChatGPT, j'explore le Javascript Vanilla.
-
-## Sitemap
-
-```mermaid
-graph TD
-    A[Home] --> B[À propos]
-    A       --> C[Contact]
-```
+Retour au source avec HTML, CSS et JavaScript.

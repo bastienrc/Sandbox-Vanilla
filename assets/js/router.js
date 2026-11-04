@@ -12,14 +12,15 @@ export function router(routes) {
 
     // Vider le contenu existant
     const app = document.getElementById("app");
-    app.innerHTML = ""; // Vider le contenu de l'élément parent pour éviter la réutilisation des anciens enfants
+    // app.innerHTML = ""; // Vider le contenu de l'élément parent pour éviter la réutilisation des anciens enfants
 
     // Créer un nouvel élément avec le contenu de la route
-    const div = document.createElement("div");
-    div.innerHTML = view;
+    // const div = document.createElement("div");
+    // div.innerHTML = view;
 
     // Ajouter le nouvel élément au DOM
-    app.appendChild(div);
+    // app.appendChild(div);
+    app.innerHTML = view;
   }
 
   // Gestion de l'événement popstate
