@@ -4,6 +4,12 @@
   --color-primary: #222;
   --color-secondary: #333;
   --color-accent: #2e2e2e;
+
+  /* Typography */
+  --color-text: #F4F1E8;
+  --color-text-muted: #C5C0B6;
+  --color-link: #E6D8B5;
+  --color-link-hover: #FFFFFF;
 }
 
 /* 🌊 Océan profond */
